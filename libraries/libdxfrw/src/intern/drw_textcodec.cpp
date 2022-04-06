@@ -202,7 +202,7 @@ std::string DRW_ConvTable::toUtf8(const std::string &s) {
         if (c < 0x80) {
             //check for \U+ encoded text
             if (c == '\\') {
-                if (it+6 < s.end() && *(it+1) == 'U' && *(it+2) == '+')  {
+                if (*(it+1) == 'U' && *(it+2) == '+' && it + 6 < s.end())  {
                     res += encodeText(std::string(it, it+7));
                     it +=6;
                 } else {
