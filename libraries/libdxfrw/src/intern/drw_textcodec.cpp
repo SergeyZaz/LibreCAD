@@ -117,10 +117,10 @@ void DRW_TextCodec::setCodePage(const std::string &c, bool dxfFormat){
         else if (cp == "ANSI_1258")
             conv.reset( new DRW_ConvTable(DRW_Table1258, CPLENGTHCOMMON) );
         else if (cp == "UTF-8") { //DXF older than 2007 are write in win codepages
-            cp = "ANSI_1252";
+            cp = "ANSI_1251";
             conv.reset( new DRW_Converter(nullptr, 0) );
         } else
-            conv.reset( new DRW_ConvTable(DRW_Table1252, CPLENGTHCOMMON) );
+            conv.reset( new DRW_ConvTable(DRW_Table1251, CPLENGTHCOMMON) );
     } else {
         if (dxfFormat)
             conv.reset( new DRW_Converter(nullptr, 0) );//utf16 to utf8

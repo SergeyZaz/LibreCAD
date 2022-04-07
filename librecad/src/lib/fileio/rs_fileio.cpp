@@ -65,6 +65,7 @@ bool RS_FileIO::fileImport(RS_Graphic& graphic, const QString& file,
     if (RS2::FormatUnknown != t) {
 		std::unique_ptr<RS_FilterInterface>&& filter(getImportFilter(file, t));
 		if (filter){
+/*
 #ifdef DWGSUPPORT
             if (file.endsWith(".dwg",Qt::CaseInsensitive)){
                 QMessageBox::StandardButton sel = QMessageBox::warning(qApp->activeWindow(), QObject::tr("Warning"),
@@ -74,6 +75,7 @@ bool RS_FileIO::fileImport(RS_Graphic& graphic, const QString& file,
                     return false;
             }
 #endif
+*/
             bool bImported {filter->fileImport(graphic, file, t)};
             if (!bImported) {
                 QMessageBox::critical( qApp->activeWindow(),
