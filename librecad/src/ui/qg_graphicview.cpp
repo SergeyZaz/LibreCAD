@@ -256,8 +256,8 @@ void QG_GraphicView::resizeEvent(QResizeEvent* /*e*/) {
 
 void QG_GraphicView::mousePressEvent(QMouseEvent* event)
 {
-    // pan zoom with middle mouse button
-    if (event->button()==Qt::MiddleButton)
+    // pan zoom with left mouse button
+    if (event->button()==Qt::LeftButton)
     {
         setCurrentAction(new RS_ActionZoomPan(*container, *this));
     }
