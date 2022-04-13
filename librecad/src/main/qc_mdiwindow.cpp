@@ -308,13 +308,14 @@ bool QC_MDIWindow::slotFileOpen(const QString& fileName, RS2::FormatType type) {
                 drawChars();
 
                 RS_DEBUG->print("QC_MDIWindow::slotFileOpen: autoZoom");
-                graphicView->zoomAuto(false);
+//                graphicView->zoomAuto(false); ZAZ
                 RS_DEBUG->print("QC_MDIWindow::slotFileOpen: autoZoom: OK");
             } else
                 graphicView->redraw();
         } else {
             RS_DEBUG->print("QC_MDIWindow::slotFileOpen: failed");
         }
+        graphicView->zoomAuto(false);
     } else {
         RS_DEBUG->print("QC_MDIWindow::slotFileOpen: cancelled");
         //statusBar()->showMessage(tr("Opening aborted"), 2000);

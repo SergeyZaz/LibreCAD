@@ -100,7 +100,7 @@ void RS_ActionZoomPan::mousePressEvent(QMouseEvent* e) {
 
 void RS_ActionZoomPan::mouseReleaseEvent(QMouseEvent* e) {
 	switch (e->button()) {
-	case Qt::LeftButton:
+	case Qt::MiddleButton:
 	case Qt::RightButton:
 		setStatus(SetPanEnd);
 		break;
